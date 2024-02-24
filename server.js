@@ -9,6 +9,16 @@ const student = require("./routes/student");
 app.use(express.json({ extended: false }));
 app.use(cors());
 
+app.use(express.static(path.join(__dirname, "./client/build")));
+app.get("*", function (_, res) {
+  res.sendFile(
+    path.join(__dirname, "./client/build/index.html"),
+    function (err) {
+      res.status(500).send(err);
+    }
+  );
+});
+
 app.get("/", (req, res) => {
   res.send("Working");
 });
