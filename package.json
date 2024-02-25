@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "server": "nodemon server",
+    "start": "node server.js",
+    
     "test": "npx sequelize-cli db:create && npm run server"
   },
   "repository": {
